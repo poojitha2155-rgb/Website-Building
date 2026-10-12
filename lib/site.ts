@@ -15,6 +15,9 @@ export const siteConfig = {
 export const mainNav = [
   { label: 'Home', href: '/' },
   { label: 'Find Jobs', href: '/jobs', menuKey: 'jobseekers' },
+  { label: 'Companies', href: '/companies', menuKey: 'companies' },
+  { label: 'Institutions', href: '/institutions', menuKey: 'institutions' },
+  { label: 'Courses', href: '/courses', menuKey: 'courses' },
   { label: 'Employers', href: '/employers', menuKey: 'employers' },
   { label: 'Career Guidance', href: '/career-guidance', menuKey: 'guidance' },
   { label: 'Job Fairs', href: '/job-fairs', menuKey: 'events' },
@@ -27,6 +30,21 @@ export const megaMenus = {
     { title: 'Get Started', links: [{ label: 'Create your profile', href: '/register?role=jobseeker' }, { label: 'Sign in to your account', href: '/login' }, { label: 'How Future Akshita works', href: '/about' }] },
     { title: 'Find Opportunities', links: [{ label: 'Browse all jobs', href: '/jobs' }, { label: 'Explore by category', href: '/jobs#categories' }, { label: 'Upcoming job fairs', href: '/job-fairs' }] },
     { title: 'Grow Your Career', links: [{ label: 'Career guidance', href: '/career-guidance' }, { label: 'Counselling request', href: '/career-guidance#counselling' }, { label: 'Skill-building resources', href: '/career-guidance#resources' }] },
+  ],
+  companies: [
+    { title: 'Explore Companies', links: [{ label: 'Browse verified companies', href: '/companies' }, { label: 'Top hiring partners', href: '/companies#featured' }, { label: 'International employers', href: '/companies#international' }] },
+    { title: 'Company Opportunities', links: [{ label: 'Open roles by company', href: '/jobs' }, { label: 'Internships', href: '/courses' }, { label: 'Company job fairs', href: '/job-fairs' }] },
+    { title: 'For Organizations', links: [{ label: 'List your company', href: '/employers#post-job' }, { label: 'Build your talent brand', href: '/contact' }] },
+  ],
+  institutions: [
+    { title: 'Find Institutions', links: [{ label: 'Browse institutions', href: '/institutions' }, { label: 'Universities & colleges', href: '/institutions#universities' }, { label: 'Training partners', href: '/institutions#training' }] },
+    { title: 'Student Services', links: [{ label: 'Explore courses', href: '/courses' }, { label: 'Career pathways', href: '/career-guidance' }, { label: 'Institution events', href: '/job-fairs' }] },
+    { title: 'Partner With Us', links: [{ label: 'Register an institution', href: '/contact' }, { label: 'Become a skills partner', href: '/contact' }] },
+  ],
+  courses: [
+    { title: 'Learn & Grow', links: [{ label: 'Browse all courses', href: '/courses' }, { label: 'Technology courses', href: '/courses#technology' }, { label: 'Business courses', href: '/courses#business' }] },
+    { title: 'Career Outcomes', links: [{ label: 'Certificate programs', href: '/courses#certificates' }, { label: 'Job-ready learning', href: '/courses#job-ready' }, { label: 'Free resources', href: '/career-guidance#resources' }] },
+    { title: 'For Institutions', links: [{ label: 'Publish a course', href: '/contact' }, { label: 'Partner with Future Akshita', href: '/contact' }] },
   ],
   employers: [
     { title: 'Hire With Confidence', links: [{ label: 'Post a new opportunity', href: '/employers#post-job' }, { label: 'Employer registration', href: '/register?role=employer' }, { label: 'Employer login', href: '/login' }] },
