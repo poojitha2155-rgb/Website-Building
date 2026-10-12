@@ -25,190 +25,33 @@ export const courses = [
   { title: 'Digital Marketing for Growth Teams', provider: 'Kalam Media Labs', category: 'Digital Marketing', level: 'Beginner', duration: '6 weeks', format: 'Self-paced', learners: '1,280+', color: 'green' },
 ]
 
-export const portalStats = [
-  { label: 'Partner companies', value: '120+', note: 'Sample platform data' },
-  { label: 'Institution partners', value: '68', note: 'Sample platform data' },
-  { label: 'Career-ready courses', value: '240+', note: 'Sample platform data' },
-  { label: 'Countries represented', value: '14', note: 'Sample platform data' },
+export const internships = [
+  { id: 'intern-1', title: 'Product Design Intern', company: 'Nimbus Softworks', location: 'Bengaluru / Hybrid', duration: '6 months', stipend: '₹35,000 / month', category: 'Design' },
+  { id: 'intern-2', title: 'Data Analyst Intern', company: 'Pragati Finance Bank', location: 'Mumbai / On-site', duration: '4 months', stipend: '₹28,000 / month', category: 'Data & Analytics' },
+  { id: 'intern-3', title: 'Community Partnerships Intern', company: 'Kalam Media Labs', location: 'Remote worldwide', duration: '3 months', stipend: 'Paid fellowship', category: 'Partnerships' },
+  { id: 'intern-4', title: 'Cloud Operations Intern', company: 'Northstar Mobility', location: 'Singapore / Remote', duration: '6 months', stipend: 'Competitive', category: 'Technology' },
 ]
 
-export type PortalTab = 'companies' | 'institutions' | 'courses'
-
-export const portalTabs: { label: string; href: string; key: PortalTab }[] = [
-  { label: 'Companies', href: '/companies', key: 'companies' },
-  { label: 'Institutions', href: '/institutions', key: 'institutions' },
-  { label: 'Courses & Training', href: '/courses', key: 'courses' },
+export const events = [
+  { id: 'event-1', title: 'Future Skills Hiring Week', date: '18–22 November 2026', location: 'Virtual · Global', type: 'Job fair', description: 'Meet employers, attend portfolio reviews and apply to early-career roles.' },
+  { id: 'event-2', title: 'Campus to Career Summit', date: '05 December 2026', location: 'Bengaluru, India', type: 'Summit', description: 'A partnership forum for institutions, employers and placement teams.' },
+  { id: 'event-3', title: 'Women in Digital Careers', date: '12 December 2026', location: 'Online', type: 'Career clinic', description: 'Mentorship circles and practical workshops for digital careers.' },
 ]
+
+export const dashboardMetrics = {
+  learner: [{ label: 'Profile completion', value: '78%' }, { label: 'Saved opportunities', value: '12' }, { label: 'Applications', value: '5' }, { label: 'Learning progress', value: '42%' }],
+  employer: [{ label: 'Active jobs', value: '18' }, { label: 'Applications', value: '248' }, { label: 'Shortlisted', value: '36' }, { label: 'Campus partners', value: '8' }],
+  institution: [{ label: 'Learners connected', value: '4,820' }, { label: 'Active employers', value: '42' }, { label: 'Placement rate', value: '86%' }, { label: 'Live programs', value: '28' }],
+  provider: [{ label: 'Published courses', value: '24' }, { label: 'Active learners', value: '3,840' }, { label: 'Completion rate', value: '74%' }, { label: 'Certificates issued', value: '1,920' }],
+  admin: [{ label: 'Registered users', value: '28,460' }, { label: 'Organizations', value: '1,240' }, { label: 'Open opportunities', value: '3,180' }, { label: 'Pending reviews', value: '48' }],
+}
 
 export const companyIndustries = ['All industries', 'Software & Product', 'Healthcare', 'Banking & Finance', 'Mobility & Logistics', 'Education & Media', 'Manufacturing']
 export const institutionTypes = ['All institution types', 'Engineering college', 'Management institute', 'University', 'Training institute', 'Vocational institution', 'Specialist institute']
 export const courseCategories = ['All categories', 'Software Engineering', 'Data Science', 'Cloud Computing', 'Professional Development', 'Cybersecurity', 'Digital Marketing']
-
-export const demoNotice = 'Demonstration content for the Future Akshitha proposal. Connect your verified platform data when the backend is ready.'
-
-export type Company = (typeof companies)[number]
-export type Institution = (typeof institutions)[number]
-export type Course = (typeof courses)[number]
-
-export const portalContent: Record<PortalTab, { eyebrow: string; title: string; description: string }> = {
-  companies: { eyebrow: 'Global employer network', title: 'Meet the companies building tomorrow', description: 'Explore organizations, roles and partnership opportunities across sectors and regions.' },
-  institutions: { eyebrow: 'Education ecosystem', title: 'Find institutions that open doors', description: 'Connect colleges, universities and training partners with employers and learners.' },
-  courses: { eyebrow: 'Skills for the future', title: 'Learn skills that move careers forward', description: 'Discover flexible learning pathways from trusted education and training providers.' },
-}
-
-export const benefitCards = [
-  { title: 'For learners', description: 'Build a profile, discover opportunities and keep your career plan in one place.', action: 'Explore opportunities', href: '/jobs' },
-  { title: 'For companies', description: 'Reach prepared, diverse talent and build high-trust institutional partnerships.', action: 'Partner with us', href: '/employers' },
-  { title: 'For institutions', description: 'Coordinate placements, courses and employer engagement from one workspace.', action: 'View institutions', href: '/institutions' },
-]
-
-export const globalRegions = ['India', 'Southeast Asia', 'Middle East', 'Africa', 'Europe', 'Remote worldwide']
-
-export const faqs = [
-  { question: 'Who is Future Akshitha for?', answer: 'The platform is designed for learners, job seekers, employers, educational institutions and course providers.' },
-  { question: 'Can institutions manage campus hiring?', answer: 'Yes. The proposal includes a dedicated institution workspace for opportunity sharing, placement coordination and outcome tracking.' },
-  { question: 'Are these live listings?', answer: 'This version uses clearly labelled demonstration data for presentation. Live data, authentication and workflows can be connected through a future backend.' },
-]
-
-export const siteSections = [
-  { title: 'Discover', links: ['Find jobs', 'Internships', 'Companies', 'Institutions', 'Courses & training'] },
-  { title: 'Build capability', links: ['Career guidance', 'Skill assessments', 'Learning pathways', 'Mentorship', 'Events & job fairs'] },
-  { title: 'Partner', links: ['For employers', 'For institutions', 'For providers', 'Global partnerships', 'Platform overview'] },
-]
-
+export const portalStats = [{ label: 'Partner companies', value: '120+' }, { label: 'Institution partners', value: '68' }, { label: 'Career-ready courses', value: '240+' }, { label: 'Countries represented', value: '14' }]
+export const demoNotice = 'Demonstration content for the Future Akshitha proposal. Connect verified platform data when the backend is ready.'
 export const opportunityTypes = ['Jobs', 'Internships', 'Courses', 'Events', 'Institutions']
-
-export const heroHighlights = [
-  { label: 'Career pathways', value: 'Connected' },
-  { label: 'Institution partnerships', value: 'Growing' },
-  { label: 'Global access', value: 'Ready' },
-]
-
-export const featuredCompanies = companies.slice(0, 4)
-export const featuredInstitutions = institutions.slice(0, 4)
-export const featuredCourses = courses.slice(0, 4)
-
-export const portalRoutes = { companies: '/companies', institutions: '/institutions', courses: '/courses' } as const
-
-export const globalSearchPlaceholder = 'Search jobs, companies, institutions or courses'
-
-export const journeySteps = ['Create your profile', 'Discover opportunities', 'Connect and apply', 'Track your progress']
-
-export const stakeholderLabels = ['Students & professionals', 'Companies & employers', 'Colleges & institutions', 'Course providers']
-
-export const sampleLabel = 'Sample data'
-
 export const countryOptions = ['India', 'Singapore', 'United Arab Emirates', 'Kenya', 'United Kingdom', 'Remote worldwide']
-
-export const opportunityCounts = { jobs: '2,400+', internships: '680+', courses: '240+', events: '36' }
-
-export const globalTagline = 'One ecosystem for talent, education and opportunity.'
-
-export const platformPillars = [
-  { title: 'Opportunity discovery', description: 'Search jobs, internships and events with clear filters for role, skill, place and work model.' },
-  { title: 'Learning pathways', description: 'Move from career goals to practical courses, credentials and guided next steps.' },
-  { title: 'Institution partnerships', description: 'Bring campus talent, placement teams and employers into one collaboration layer.' },
-]
-
-export const platformPromise = 'Make every next step clearer, more connected and more achievable.'
-
-export const portalCta = { label: 'Explore the ecosystem', href: '/companies' }
-
-export const categories = ['Technology', 'Healthcare', 'Finance', 'Education', 'Manufacturing', 'Sustainability']
-
-export const productNav = [
-  { label: 'Jobs & Internships', href: '/jobs' },
-  { label: 'Companies', href: '/companies' },
-  { label: 'Institutions', href: '/institutions' },
-  { label: 'Courses', href: '/courses' },
-]
-
-export const footerLinks = [
-  { label: 'Privacy', href: '/about' },
-  { label: 'Terms', href: '/about' },
-  { label: 'Accessibility', href: '/about' },
-]
-
-export const platformAudience = 'Built for a world where careers, learning and collaboration are connected.'
-
-export const callout = { label: 'Future-ready network', title: 'The right opportunity is often one connection away.' }
-
-export const pageKicker = 'Future Akshitha ecosystem'
-
-export const demoDisclaimer = 'Prototype interface — authentication, real listings and transactions require backend integration.'
-
-export const profileRoles = ['Learner', 'Professional', 'Employer', 'Institution', 'Training provider']
-
-export const globalOpportunityNote = 'Explore cross-border and remote opportunities with country-aware discovery.'
-
-export const partnerNote = 'Partner profiles shown here are illustrative and should be replaced with approved organizations.'
-
-export const courseFormats = ['Online', 'Hybrid', 'Live online', 'Self-paced']
-
-export const experienceLevels = ['Beginner', 'Intermediate', 'Advanced', 'All levels']
-
-export const portalNav = [...portalTabs]
-
-export const sampleCountries = countryOptions
-
-export const homepageSectionTitles = { audience: 'Choose the path that fits your next move', ecosystem: 'A connected ecosystem for meaningful progress' }
-
-export const allPortalItems = { companies, institutions, courses }
-
-export const globalReady = true
-
-export const pageMeta = { title: 'Future Akshitha — Global talent and learning ecosystem', description: 'A connected platform for careers, education and institutional collaboration.' }
-
-export const version = 'proposal-ui-1'
-
-export const lastUpdated = '2026'
-
-export const navSearchLabel = 'Search the platform'
-
-export const mobileMenuLabel = 'Open platform menu'
-
-export const partnershipCta = { title: 'Build the next chapter with us', description: 'Bring your learners, teams or programs into a connected international ecosystem.', href: '/contact', label: 'Start a conversation' }
-
-export const portalCardColors = ['blue', 'teal', 'violet', 'amber']
-
-export const dashboardRoutes = { learner: '/login', employer: '/employers', institution: '/institutions', provider: '/courses' } as const
-
-export const allCountries = sampleCountries
-
-export const allCategories = categories
-
-export const homeSearchFields = ['Job title or skill', 'City, country or remote', 'Jobs, courses or institutions']
-
-export const opportunityLabels = ['Work', 'Learn', 'Connect']
-
-export const moreNavItems = ['Resources', 'Support', 'Language']
-
-export const proposalTitle = 'Future Akshitha Company'
-
-export const proposalSubtitle = 'Global Talent, Education, Training and Career Management Platform'
-
-export const platformStatus = 'Frontend proposal'
-
-export const contentSource = 'Curated demonstration content'
-
-export const futureScope = ['Authentication', 'Live search', 'Applications', 'Analytics', 'Messaging']
-
-export const supportedModes = ['On-site', 'Hybrid', 'Remote']
-
-export const institutionalServices = ['Placement coordination', 'Student engagement', 'Employer partnerships', 'Course discovery']
-
-export const employerServices = ['Talent discovery', 'Opportunity publishing', 'Campus recruitment', 'Hiring analytics']
-
-export const learnerServices = ['Profile building', 'Job discovery', 'Learning plans', 'Career support']
-
-export const providerServices = ['Course publishing', 'Enrollment insights', 'Cohort management', 'Certificates']
-
-export const allServices = [...institutionalServices, ...employerServices, ...learnerServices, ...providerServices]
-
-export const platformName = 'Future Akshitha'
-
-export const portalNavDescription = 'Explore people, organizations and pathways.'
-
-export const accessibilityNote = 'Designed with keyboard-friendly controls and readable contrast.'
-
-export const implementationNote = 'Replace mock arrays with API calls without changing card components.'
+export const stakeholderLabels = ['Students & professionals', 'Companies & employers', 'Colleges & institutions', 'Course providers']
+export const portalNav = [{ label: 'Jobs', href: '/jobs' }, { label: 'Internships', href: '/internships' }, { label: 'Companies', href: '/companies' }, { label: 'Institutions', href: '/institutions' }, { label: 'Courses', href: '/courses' }, { label: 'Events', href: '/job-fairs' }]
