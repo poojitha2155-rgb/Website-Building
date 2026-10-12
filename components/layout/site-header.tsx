@@ -3,15 +3,16 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Mail, Menu, Phone, X } from 'lucide-react'
+import { ChevronDown, Mail, Menu, Phone, X } from 'lucide-react'
 import { Logo } from '@/components/layout/logo'
 import { buttonVariants } from '@/components/ui/button'
-import { mainNav, siteConfig } from '@/lib/site'
+import { mainNav, megaMenus, siteConfig } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
 export function SiteHeader() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const [activeMenu, setActiveMenu] = useState<string | null>(null)
 
   const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href))
 
@@ -39,21 +40,65 @@ export function SiteHeader() {
         <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-1">
             {mainNav.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  aria-current={isActive(item.href) ? 'page' : undefined}
-                  className={cn(
-                    'rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-secondary-foreground',
-                    isActive(item.href) ? 'text-primary' : 'text-foreground/80',
-                  )}
-                >
-                  {item.label}
-                </Link>
+              <li key={item.href} className="relative">
+                {item.menuKey ? (
+                  <button
+                    type="button"
+                    aria-expanded={activeMenu === item.menuKey}
+                    aria-controls={`${item.menuKey}-menu`}
+                    onClick={() => setActiveMenu((current) => (current === item.menuKey ? null : item.menuKey ?? null))}
+                    className={cn(
+                      'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-secondary-foreground',
+                      isActive(item.href) || activeMenu === item.menuKey ? 'text-primary' : 'text-foreground/80',
+                    )}
+                  >
+                    {item.label}
+                    <ChevronDown className={cn('size-4 transition-transform', activeMenu === item.menuKey && 'rotate-180')} aria-hidden="true" />
+                  </button>
+                ) : (
+                  <Link
+                    href={item.href}
+                    aria-current={isActive(item.href) ? 'page' : undefined}
+                    className={cn(
+                      'block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-secondary-foreground',
+                      isActive(item.href) ? 'text-primary' : 'text-foreground/80',
+                    )}
+                  >
+                    {item.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
         </nav>
+
+        {activeMenu && (
+          <div
+            id={`${activeMenu}-menu`}
+            className="absolute left-1/2 top-full hidden w-[min(920px,calc(100vw-2rem))] -translate-x-1/2 rounded-b-3xl border border-border bg-card p-6 shadow-xl lg:block"
+          >
+            <div className="grid gap-6 md:grid-cols-3">
+              {megaMenus[activeMenu as keyof typeof megaMenus].map((group) => (
+                <section key={group.title}>
+                  <h2 className="mb-3 text-base font-semibold text-foreground">{group.title}</h2>
+                  <ul className="space-y-1 border-l-2 border-accent pl-4">
+                    {group.links.map((link) => (
+                      <li key={link.href + link.label}>
+                        <Link
+                          href={link.href}
+                          onClick={() => setActiveMenu(null)}
+                          className="block rounded-md px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="hidden items-center gap-2 lg:flex">
           <Link href="/login" className={buttonVariants({ variant: 'outline', size: 'lg', className: 'px-4' })}>
