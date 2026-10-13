@@ -7,13 +7,16 @@ export function TopEmployers() {
   const marqueeEmployers = [...employers, ...employers]
 
   return (
-    <section className="mx-auto max-w-7xl overflow-hidden px-4 py-16 lg:px-6">
+    <section className="relative mx-auto max-w-7xl overflow-hidden px-4 py-16 lg:px-6">
+      <div className="pointer-events-none absolute -left-24 top-16 size-64 rounded-full bg-primary/5 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 bottom-0 size-64 rounded-full bg-accent/10 blur-3xl" />
       <SectionHeading
         eyebrow="Trusted by employers"
         title="Top companies hiring now"
         description="Verified organisations actively recruiting through Akshitha Edutech."
+        align="center"
       />
-      <div className="group relative mt-10 overflow-hidden rounded-3xl border border-border/70 bg-card/80 py-5 shadow-sm">
+      <div className="group relative mt-10 overflow-hidden rounded-3xl border border-primary/15 bg-gradient-to-r from-primary/[0.04] via-card to-accent/[0.06] py-5 shadow-[0_16px_45px_-28px_oklch(0.29_0.11_250/0.45)]">
         <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-card to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-card to-transparent" />
         <ul className="employer-marquee flex w-max items-stretch gap-4 px-4 group-hover:[animation-play-state:paused]">

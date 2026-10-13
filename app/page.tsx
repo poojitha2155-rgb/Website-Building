@@ -15,12 +15,12 @@ export default function HomePage() {
     <>
       <Hero />
       <StatsStrip />
+      <TopEmployers />
       <QuickServices />
       <EcosystemGrid />
       <JobCategories />
       <FeaturedJobs />
       <HowItWorks />
-      <TopEmployers />
       <UpcomingJobFairs />
       <Testimonials />
       <CtaBanner />
