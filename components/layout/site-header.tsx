@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { ChevronDown, Mail, Menu, Phone, X } from 'lucide-react'
 import { Logo } from '@/components/layout/logo'
 import { buttonVariants } from '@/components/ui/button'
@@ -13,8 +13,17 @@ export function SiteHeader() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
+  const closeMenuTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href))
+  const showMenu = (menuKey: string) => {
+    if (closeMenuTimer.current) clearTimeout(closeMenuTimer.current)
+    setActiveMenu(menuKey)
+  }
+  const hideMenuSoon = () => {
+    if (closeMenuTimer.current) clearTimeout(closeMenuTimer.current)
+    closeMenuTimer.current = setTimeout(() => setActiveMenu(null), 120)
+  }
 
   return (
     <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
@@ -40,13 +49,18 @@ export function SiteHeader() {
         <nav aria-label="Main" className="hidden lg:block">
           <ul className="flex items-center gap-1">
             {mainNav.map((item) => (
-              <li key={item.href} className="relative">
+              <li
+                key={item.href}
+                className="relative"
+                onMouseEnter={() => item.menuKey && showMenu(item.menuKey)}
+                onMouseLeave={() => item.menuKey && hideMenuSoon()}
+                onFocus={() => item.menuKey && showMenu(item.menuKey)}
+              >
                 {item.menuKey ? (
-                  <button
-                    type="button"
+                  <Link
+                    href={item.href}
                     aria-expanded={activeMenu === item.menuKey}
                     aria-controls={`${item.menuKey}-menu`}
-                    onClick={() => setActiveMenu((current) => (current === item.menuKey ? null : item.menuKey ?? null))}
                     className={cn(
                       'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-secondary-foreground',
                       isActive(item.href) || activeMenu === item.menuKey ? 'text-primary' : 'text-foreground/80',
@@ -54,7 +68,7 @@ export function SiteHeader() {
                   >
                     {item.label}
                     <ChevronDown className={cn('size-4 transition-transform', activeMenu === item.menuKey && 'rotate-180')} aria-hidden="true" />
-                  </button>
+                  </Link>
                 ) : (
                   <Link
                     href={item.href}
@@ -75,6 +89,8 @@ export function SiteHeader() {
         {activeMenu && (
           <div
             id={`${activeMenu}-menu`}
+            onMouseEnter={() => showMenu(activeMenu)}
+            onMouseLeave={hideMenuSoon}
             className="absolute left-1/2 top-full hidden w-[min(920px,calc(100vw-2rem))] -translate-x-1/2 rounded-b-3xl border border-border bg-card p-6 shadow-xl lg:block"
           >
             <div className="grid gap-6 md:grid-cols-3">
