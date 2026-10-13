@@ -86,3 +86,22 @@
     @apply font-heading text-balance;
   }
 }
+
+@keyframes employer-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.employer-marquee {
+  animation: employer-marquee 32s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .employer-marquee {
+    animation-play-state: paused;
+  }
+}
