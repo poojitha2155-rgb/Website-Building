@@ -100,18 +100,15 @@ export function SiteHeader() {
           </div>
         )}
 
-        <div className="hidden items-center gap-2 lg:flex">
-          <Link href="/login" className={buttonVariants({ variant: 'outline', size: 'lg', className: 'px-4' })}>
-            Login
-          </Link>
+        <div className="hidden items-center lg:flex">
           <Link
-            href="/register"
+            href="/login"
             className={buttonVariants({
               size: 'lg',
-              className: 'bg-accent px-4 text-accent-foreground hover:bg-accent/90',
+              className: 'bg-accent px-5 text-accent-foreground hover:bg-accent/90',
             })}
           >
-            Register
+            Login / Register
           </Link>
         </div>
 
@@ -145,20 +142,13 @@ export function SiteHeader() {
                 </Link>
               </li>
             ))}
-            <li className="mt-3 grid grid-cols-2 gap-2">
+            <li className="mt-3">
               <Link
                 href="/login"
                 onClick={() => setOpen(false)}
-                className={buttonVariants({ variant: 'outline', size: 'lg' })}
+                className={buttonVariants({ size: 'lg', className: 'w-full bg-accent text-accent-foreground hover:bg-accent/90' })}
               >
-                Login
-              </Link>
-              <Link
-                href="/register"
-                onClick={() => setOpen(false)}
-                className={buttonVariants({ size: 'lg', className: 'bg-accent text-accent-foreground hover:bg-accent/90' })}
-              >
-                Register
+                Login / Register
               </Link>
             </li>
           </ul>
