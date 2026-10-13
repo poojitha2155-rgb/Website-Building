@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useRef, useState } from 'react'
-import { ChevronDown, Mail, Menu, Phone, X } from 'lucide-react'
+import { useEffect, useRef, useState } from 'react'
+import { ChevronDown, Mail, Menu, Phone, Search, X } from 'lucide-react'
 import { Logo } from '@/components/layout/logo'
 import { buttonVariants } from '@/components/ui/button'
 import { mainNav, megaMenus, siteConfig } from '@/lib/site'
@@ -13,7 +13,15 @@ export function SiteHeader() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
+  const [scrolled, setScrolled] = useState(false)
   const closeMenuTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 24)
+    handleScroll()
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const isActive = (href: string) => (href === '/' ? pathname === '/' : pathname.startsWith(href))
   const showMenu = (menuKey: string) => {
@@ -25,25 +33,37 @@ export function SiteHeader() {
     closeMenuTimer.current = setTimeout(() => setActiveMenu(null), 120)
   }
 
+  const socialLinks = [
+    { label: 'Facebook', short: 'f', href: 'https://www.facebook.com/' },
+    { label: 'LinkedIn', short: 'in', href: 'https://www.linkedin.com/' },
+    { label: 'YouTube', short: '▶', href: 'https://www.youtube.com/' },
+  ]
+
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="hidden bg-brand-dark text-xs text-white/80 md:block">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-1.5 lg:px-6">
-          <p>{siteConfig.tagline}</p>
-          <div className="flex items-center gap-5">
-            <a href={`tel:${siteConfig.contact.phone}`} className="flex items-center gap-1.5 hover:text-white">
+    <header className={cn('sticky top-0 z-40 transition-all duration-300', scrolled ? 'bg-background/90 py-2 backdrop-blur-xl' : 'bg-background py-3')}>
+      <div className="mx-auto max-w-7xl px-4 lg:px-6">
+        <div className="hidden items-center justify-between rounded-2xl bg-brand-dark px-5 py-2 text-xs text-white/85 shadow-sm md:flex">
+          <p className="hidden lg:block">{siteConfig.tagline}</p>
+          <div className="flex items-center gap-3 lg:gap-5">
+            <div className="flex items-center gap-2" aria-label="Social media links">
+              {socialLinks.map((social) => (
+                <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={`Akshitha Edutech on ${social.label}`} className="flex size-7 items-center justify-center rounded-full border border-white/60 font-semibold transition-colors hover:bg-white hover:text-brand-dark">
+                  {social.short}
+                </a>
+              ))}
+            </div>
+            <a href={`tel:${siteConfig.contact.phone}`} className="flex items-center gap-1.5 font-medium hover:text-white">
               <Phone className="size-3.5" aria-hidden="true" />
               Toll-free {siteConfig.contact.phone}
             </a>
-            <a href={`mailto:${siteConfig.contact.email}`} className="flex items-center gap-1.5 hover:text-white">
+            <a href={`mailto:${siteConfig.contact.email}`} className="hidden items-center gap-1.5 hover:text-white xl:flex">
               <Mail className="size-3.5" aria-hidden="true" />
               {siteConfig.contact.email}
             </a>
           </div>
         </div>
-      </div>
 
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 lg:px-6">
+        <div className={cn('mt-2 flex items-center justify-between gap-4 rounded-[2rem] border border-primary/35 bg-background/75 px-4 shadow-sm backdrop-blur-xl transition-all lg:px-6', scrolled ? 'h-14 rounded-2xl' : 'h-[4.75rem]')}>
         <Logo />
 
         <nav aria-label="Main" className="hidden lg:block">
@@ -116,7 +136,10 @@ export function SiteHeader() {
           </div>
         )}
 
-        <div className="hidden items-center lg:flex">
+        <div className="hidden items-center gap-3 lg:flex">
+          <Link href="/jobs" aria-label="Search jobs" className="inline-flex size-10 items-center justify-center rounded-full text-foreground/75 transition-colors hover:bg-secondary hover:text-primary">
+            <Search className="size-5" aria-hidden="true" />
+          </Link>
           <Link
             href="/login"
             className={buttonVariants({
@@ -138,6 +161,7 @@ export function SiteHeader() {
           {open ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}
           <span className="sr-only">{open ? 'Close menu' : 'Open menu'}</span>
         </button>
+        </div>
       </div>
 
       {open && (
