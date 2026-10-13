@@ -8,7 +8,7 @@ import { siteConfig } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Contact Us',
-  description: 'Get in touch with the Future Akshita Company helpdesk for job seekers and employers.',
+  description: 'Get in touch with the Akshitha Edutech Company helpdesk for job seekers and employers.',
 }
 
 export default function ContactPage() {

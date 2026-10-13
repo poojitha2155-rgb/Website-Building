@@ -5,7 +5,7 @@ import { LoginForm } from '@/components/auth/login-form'
 
 export const metadata: Metadata = {
   title: 'Login',
-  description: 'Sign in to your Future Akshita Company account.',
+  description: 'Sign in to your Akshitha Edutech Company account.',
 }
 
 export default function LoginPage() {

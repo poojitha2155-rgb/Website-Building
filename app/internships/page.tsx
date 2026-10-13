@@ -38,4 +38,4 @@ export default function InternshipsPage() {
   )
 }
 
-export const metadata = { title: 'Internships | Future Akshita Company', description: 'Discover verified internship pathways with Future Akshita Company.' }
+export const metadata = { title: 'Internships | Akshitha Edutech', description: 'Discover verified internship pathways with Akshitha Edutech.' }

@@ -9,7 +9,7 @@ export function TopEmployers() {
       <SectionHeading
         eyebrow="Trusted by employers"
         title="Top companies hiring now"
-        description="Verified organisations actively recruiting through Future Akshita."
+        description="Verified organisations actively recruiting through Akshitha Edutech."
       />
       <ul className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {employers.map((employer) => (

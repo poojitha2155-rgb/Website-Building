@@ -1,11 +1,11 @@
 export const siteConfig = {
-  name: 'Future Akshita Company',
-  shortName: 'Future Akshita',
+  name: 'Akshitha Edutech',
+  shortName: 'Akshitha Edutech',
   tagline: 'Connecting talent with opportunity across India',
   description:
-    'Future Akshita Company is a career services platform that helps job seekers find jobs, employers hire talent, and everyone access career guidance, skill programs, and job fairs.',
+    'Akshitha Edutech is a career services platform that helps job seekers find jobs, employers hire talent, and everyone access career guidance, skill programs, and job fairs.',
   contact: {
-    email: 'support@futureakshita.example',
+    email: 'support@akshithaedutech.example',
     phone: '1800-000-0000',
     address: '4th Floor, Akshita Towers, MG Road, Bengaluru, Karnataka 560001',
     hours: 'Mon – Sat, 9:00 AM – 6:00 PM',
@@ -27,7 +27,7 @@ export const mainNav = [
 
 export const megaMenus = {
   jobseekers: [
-    { title: 'Get Started', links: [{ label: 'Create your profile', href: '/register?role=jobseeker' }, { label: 'Sign in to your account', href: '/login' }, { label: 'How Future Akshita works', href: '/about' }] },
+    { title: 'Get Started', links: [{ label: 'Create your profile', href: '/register?role=jobseeker' }, { label: 'Sign in to your account', href: '/login' }, { label: 'How Akshitha Edutech works', href: '/about' }] },
     { title: 'Find Opportunities', links: [{ label: 'Browse all jobs', href: '/jobs' }, { label: 'Explore by category', href: '/jobs#categories' }, { label: 'Upcoming job fairs', href: '/job-fairs' }] },
     { title: 'Grow Your Career', links: [{ label: 'Career guidance', href: '/career-guidance' }, { label: 'Counselling request', href: '/career-guidance#counselling' }, { label: 'Skill-building resources', href: '/career-guidance#resources' }] },
   ],
@@ -44,7 +44,7 @@ export const megaMenus = {
   courses: [
     { title: 'Learn & Grow', links: [{ label: 'Browse all courses', href: '/courses' }, { label: 'Technology courses', href: '/courses#technology' }, { label: 'Business courses', href: '/courses#business' }] },
     { title: 'Career Outcomes', links: [{ label: 'Certificate programs', href: '/courses#certificates' }, { label: 'Job-ready learning', href: '/courses#job-ready' }, { label: 'Free resources', href: '/career-guidance#resources' }] },
-    { title: 'For Institutions', links: [{ label: 'Publish a course', href: '/contact' }, { label: 'Partner with Future Akshita', href: '/contact' }] },
+    { title: 'For Institutions', links: [{ label: 'Publish a course', href: '/contact' }, { label: 'Partner with Akshitha Edutech', href: '/contact' }] },
   ],
   employers: [
     { title: 'Hire With Confidence', links: [{ label: 'Post a new opportunity', href: '/employers#post-job' }, { label: 'Employer registration', href: '/register?role=employer' }, { label: 'Employer login', href: '/login' }] },
@@ -59,7 +59,7 @@ export const megaMenus = {
   events: [
     { title: 'Discover Events', links: [{ label: 'View upcoming job fairs', href: '/job-fairs' }, { label: 'Register for an event', href: '/job-fairs' }] },
     { title: 'For Employers', links: [{ label: 'Create a job fair', href: '/employers' }, { label: 'Meet local talent', href: '/job-fairs' }] },
-    { title: 'Stay Connected', links: [{ label: 'Contact the events team', href: '/contact' }, { label: 'About Future Akshita', href: '/about' }] },
+    { title: 'Stay Connected', links: [{ label: 'Contact the events team', href: '/contact' }, { label: 'About Akshitha Edutech', href: '/about' }] },
   ],
 } as const
 

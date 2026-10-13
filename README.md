@@ -1,4 +1,4 @@
-# Future Akshita Company — Careers Portal (Frontend)
+# Akshitha Edutech Company — Careers Portal (Frontend)
 
 A complete, editable frontend for an employment and career-services portal. The structure (job search, employer services, career guidance and job fairs) is like a national career portal, but the branding, content and design are all original.
 
