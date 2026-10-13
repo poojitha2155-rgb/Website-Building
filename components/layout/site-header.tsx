@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
@@ -43,7 +44,10 @@ export function SiteHeader() {
     <header className={cn('sticky top-0 z-40 transition-all duration-300', scrolled ? 'bg-background/90 py-2 backdrop-blur-xl' : 'bg-background py-3')}>
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
         <div className="hidden items-center justify-between rounded-2xl bg-brand-dark px-5 py-2 text-xs text-white/85 shadow-sm md:flex">
-          <p className="hidden lg:block">{siteConfig.tagline}</p>
+          <Link href="/" className="hidden items-center gap-2 rounded-lg px-1 py-0.5 transition-colors hover:bg-white/10 lg:flex" aria-label="Akshitha Edutech home">
+            <Image src="/images/akshitha-edutech-logo.png" alt="" width={520} height={180} className="h-7 w-auto max-w-[7.5rem] object-contain object-left" />
+            <span className="sr-only">Akshitha Edutech</span>
+          </Link>
           <div className="flex items-center gap-3 lg:gap-5">
             <div className="flex items-center gap-2" aria-label="Social media links">
               {socialLinks.map((social) => (
