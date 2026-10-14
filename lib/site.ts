@@ -28,7 +28,7 @@ export const mainNav = [
 export const megaMenus = {
   jobseekers: [
     { title: 'Get Started', links: [{ label: 'Create your profile', href: '/register?role=jobseeker' }, { label: 'Sign in to your account', href: '/login' }, { label: 'How Akshitha Edutech works', href: '/about' }] },
-    { title: 'Find Opportunities', links: [{ label: 'Browse all jobs', href: '/jobs' }, { label: 'Explore by category', href: '/jobs#categories' }, { label: 'Upcoming job fairs', href: '/job-fairs' }] },
+    { title: 'Find Opportunities', links: [{ label: 'Domestic Jobs', href: '/jobs#domestic' }, { label: 'International Jobs', href: '/jobs#international' }, { label: 'Classified Jobs', href: '/jobs#classified' }, { label: 'RA-International Jobs', href: '/jobs#ra-international' }] },
     { title: 'Grow Your Career', links: [{ label: 'Career guidance', href: '/career-guidance' }, { label: 'Counselling request', href: '/career-guidance#counselling' }, { label: 'Skill-building resources', href: '/career-guidance#resources' }] },
   ],
   companies: [
@@ -53,13 +53,13 @@ export const megaMenus = {
   ],
   guidance: [
     { title: 'Career Planning', links: [{ label: 'Book career counselling', href: '/career-guidance#counselling' }, { label: 'Explore career paths', href: '/career-guidance' }, { label: 'Skills assessment', href: '/career-guidance#resources' }] },
-    { title: 'Learning & Skills', links: [{ label: 'Training resources', href: '/career-guidance#resources' }, { label: 'Interview preparation', href: '/career-guidance#resources' }, { label: 'Resume support', href: '/career-guidance#resources' }] },
-    { title: 'Support', links: [{ label: 'Meet our counsellors', href: '/career-guidance' }, { label: 'Ask a question', href: '/contact' }] },
+    { title: 'Learning & Skills', links: [{ label: 'Training resources', href: '/career-guidance#resources' }, { label: 'Interview preparation', href: '/career-guidance#resources' }, { label: 'AI Resume Building', href: '/career-guidance#ai-resume' }] },
+    { title: 'Support', links: [{ label: 'Admin', href: '/career-guidance' }, { label: 'Ask a question', href: '/contact' }] },
   ],
   events: [
     { title: 'Discover Events', links: [{ label: 'View upcoming job fairs', href: '/job-fairs' }, { label: 'Register for an event', href: '/job-fairs' }] },
     { title: 'For Employers', links: [{ label: 'Create a job fair', href: '/employers' }, { label: 'Meet local talent', href: '/job-fairs' }] },
-    { title: 'Stay Connected', links: [{ label: 'Contact the events team', href: '/contact' }, { label: 'About Akshitha Edutech', href: '/about' }] },
+    { title: 'Stay Connected', links: [{ label: 'Contact the events team', href: '/contact' }, { label: 'List of model career centers', href: '/career-guidance#career-centers' }] },
   ],
 } as const
 

@@ -15,10 +15,17 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false)
   const [activeMenu, setActiveMenu] = useState<string | null>(null)
   const [scrolled, setScrolled] = useState(false)
+  const [scrollingDown, setScrollingDown] = useState(false)
   const closeMenuTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const lastScrollY = useRef(0)
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 24)
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+      setScrolled(currentScrollY > 24)
+      setScrollingDown(currentScrollY > lastScrollY.current && currentScrollY > 24)
+      lastScrollY.current = currentScrollY
+    }
     handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
@@ -67,7 +74,7 @@ export function SiteHeader() {
           </div>
         </div>
 
-        <div className={cn('mt-2 flex items-center justify-between gap-4 rounded-[2rem] border border-primary/35 bg-background/75 px-4 shadow-sm backdrop-blur-xl transition-all lg:px-6', scrolled ? 'h-14 rounded-2xl' : 'h-[4.75rem]')}>
+        <div className={cn('mt-2 flex items-center justify-between gap-4 rounded-[2rem] border border-primary/35 bg-background/75 px-4 shadow-sm backdrop-blur-xl transition-all lg:px-6', scrollingDown ? 'h-14 rounded-2xl' : 'h-[4.75rem]')}>
         <Logo />
 
         <nav aria-label="Main" className="hidden lg:block">
