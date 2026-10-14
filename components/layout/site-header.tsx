@@ -93,7 +93,7 @@ export function SiteHeader() {
                     aria-expanded={activeMenu === item.menuKey}
                     aria-controls={`${item.menuKey}-menu`}
                     className={cn(
-                      'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-secondary-foreground',
+                      'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-[oklch(0.93_0.08_300)] hover:text-[oklch(0.35_0.13_300)]',
                       isActive(item.href) || activeMenu === item.menuKey ? 'text-primary' : 'text-foreground/80',
                     )}
                   >
@@ -105,7 +105,7 @@ export function SiteHeader() {
                     href={item.href}
                     aria-current={isActive(item.href) ? 'page' : undefined}
                     className={cn(
-                      'block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-secondary hover:text-secondary-foreground',
+                      'block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-[oklch(0.94_0.12_88)] hover:text-[oklch(0.38_0.12_70)]',
                       isActive(item.href) ? 'text-primary' : 'text-foreground/80',
                     )}
                   >
@@ -134,7 +134,7 @@ export function SiteHeader() {
                         <Link
                           href={link.href}
                           onClick={() => setActiveMenu(null)}
-                          className="block rounded-md px-2 py-2 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-primary"
+                          className="group/link block rounded-md border border-transparent px-2 py-2 text-sm text-muted-foreground transition-colors hover:border-[oklch(0.72_0.18_300)] hover:bg-[oklch(0.93_0.08_300)] hover:text-[oklch(0.35_0.13_300)] even:hover:border-[oklch(0.78_0.16_82)] even:hover:bg-[oklch(0.94_0.12_88)] even:hover:text-[oklch(0.38_0.12_70)]"
                         >
                           {link.label}
                         </Link>
