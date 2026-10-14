@@ -9,14 +9,14 @@ type LogoProps = {
 
 export function Logo({ className }: LogoProps) {
   return (
-    <Link href="/" className={cn('flex min-w-0 items-center', className)} aria-label="Akshitha Edutech home">
+    <Link href="/" className={cn('flex min-w-0 shrink-0 items-center', className)} aria-label="Akshitha Edutech home">
       <Image
         src="/images/akshitha-edutech-logo.png"
         alt="Akshitha Edutech"
         width={520}
         height={180}
         priority
-        className="h-auto max-h-14 w-auto max-w-[min(100%,17rem)] object-contain object-left"
+        className="h-12 w-[11.5rem] max-w-[40vw] rounded-md object-cover object-center lg:h-14 lg:w-[13rem]"
       />
     </Link>
   )

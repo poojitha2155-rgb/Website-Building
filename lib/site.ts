@@ -13,7 +13,6 @@ export const siteConfig = {
 }
 
 export const mainNav = [
-  { label: 'Home', href: '/' },
   { label: 'Find Jobs', href: '/jobs', menuKey: 'jobseekers' },
   { label: 'Companies', href: '/companies', menuKey: 'companies' },
   { label: 'Institutions', href: '/institutions', menuKey: 'institutions' },
