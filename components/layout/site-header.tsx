@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import { ChevronDown, Mail, Menu, Phone, Search, X } from 'lucide-react'
+import { BriefcaseBusiness, Building2, CalendarDays, Compass, GraduationCap, Landmark, Mail, Menu, Phone, Search, UsersRound, X } from 'lucide-react'
 import { Logo } from '@/components/layout/logo'
 import { buttonVariants } from '@/components/ui/button'
 import { mainNav, megaMenus, siteConfig } from '@/lib/site'
@@ -45,9 +45,18 @@ export function SiteHeader() {
     { label: 'LinkedIn', short: 'in', href: 'https://www.linkedin.com/' },
     { label: 'YouTube', short: '▶', href: 'https://www.youtube.com/' },
   ]
+  const navIcons = {
+    'Find Jobs': BriefcaseBusiness,
+    Companies: Building2,
+    Institutions: Landmark,
+    Courses: GraduationCap,
+    Employers: UsersRound,
+    'Career Guidance': Compass,
+    'Job Fairs': CalendarDays,
+  }
 
   return (
-    <header className={cn('sticky top-0 z-40 transition-all duration-300', scrolled ? 'bg-background/90 py-2 backdrop-blur-xl' : 'bg-background py-3')}>
+    <header className="sticky top-0 z-40 bg-transparent py-3 transition-all duration-300">
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
         <div className="hidden items-center justify-between rounded-2xl bg-brand-dark px-5 py-2 text-xs text-white/85 shadow-sm md:flex">
           <div className="flex items-center gap-3 lg:gap-5">
@@ -66,6 +75,8 @@ export function SiteHeader() {
               <Mail className="size-3.5" aria-hidden="true" />
               {siteConfig.contact.email}
             </a>
+            <Link href="/about" className="hidden border-l border-white/20 pl-4 hover:text-white xl:block">About</Link>
+            <Link href="/contact" className="hidden hover:text-white xl:block">Contact</Link>
           </div>
         </div>
 
@@ -92,8 +103,11 @@ export function SiteHeader() {
                       isActive(item.href) || activeMenu === item.menuKey ? 'text-primary' : 'text-foreground/80',
                     )}
                   >
-                    {item.label}
-                    <ChevronDown className={cn('size-4 transition-transform', activeMenu === item.menuKey && 'rotate-180')} aria-hidden="true" />
+                    {(() => {
+                      const Icon = navIcons[item.label as keyof typeof navIcons]
+                      return Icon ? <Icon className="size-4 shrink-0 text-primary" aria-hidden="true" /> : null
+                    })()}
+                    <span>{item.label}</span>
                   </Link>
                 ) : (
                   <Link

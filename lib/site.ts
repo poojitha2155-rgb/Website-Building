@@ -20,8 +20,6 @@ export const mainNav = [
   { label: 'Employers', href: '/employers', menuKey: 'employers' },
   { label: 'Career Guidance', href: '/career-guidance', menuKey: 'guidance' },
   { label: 'Job Fairs', href: '/job-fairs', menuKey: 'events' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
 ]
 
 export const megaMenus = {

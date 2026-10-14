@@ -16,7 +16,7 @@ export function Logo({ className }: LogoProps) {
         width={520}
         height={180}
         priority
-        className="h-12 w-[11.5rem] max-w-[40vw] rounded-md object-cover object-center lg:h-14 lg:w-[13rem]"
+        className="h-12 w-[11.5rem] max-w-[40vw] rounded-md object-contain object-left lg:h-14 lg:w-[13rem]"
       />
     </Link>
   )
