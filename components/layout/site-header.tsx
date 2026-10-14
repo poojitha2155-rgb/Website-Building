@@ -59,7 +59,11 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 bg-transparent py-3 transition-all duration-300">
       <div className="mx-auto max-w-7xl px-4 lg:px-6">
         <div className="hidden items-center justify-between rounded-2xl bg-brand-dark px-5 py-2 text-xs text-white/85 shadow-sm md:flex">
-          <div className="flex items-center gap-3 lg:gap-5">
+          <div className="flex items-center gap-4 lg:gap-6">
+            <Link href="/about" className="hidden hover:text-white md:block">About</Link>
+            <Link href="/contact" className="hidden hover:text-white md:block">Contact</Link>
+          </div>
+          <div className="ml-auto flex items-center gap-3 lg:gap-5">
             <div className="flex items-center gap-2" aria-label="Social media links">
               {socialLinks.map((social) => (
                 <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={`Akshitha Edutech on ${social.label}`} className="flex size-7 items-center justify-center rounded-full border border-white/60 font-semibold transition-colors hover:bg-white hover:text-brand-dark">
@@ -75,8 +79,6 @@ export function SiteHeader() {
               <Mail className="size-3.5" aria-hidden="true" />
               {siteConfig.contact.email}
             </a>
-            <Link href="/about" className="hidden border-l border-white/20 pl-4 hover:text-white xl:block">About</Link>
-            <Link href="/contact" className="hidden hover:text-white xl:block">Contact</Link>
           </div>
         </div>
 
