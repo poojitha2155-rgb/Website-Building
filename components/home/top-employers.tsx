@@ -7,7 +7,7 @@ export function TopEmployers() {
   const marqueeEmployers = [...employers, ...employers]
 
   return (
-    <section className="relative mx-auto max-w-7xl overflow-hidden px-4 pb-12 pt-4 lg:px-6">
+    <section className="relative mx-auto max-w-7xl overflow-hidden px-4 pb-12 pt-0 lg:px-6">
       <div className="pointer-events-none absolute -left-24 top-16 size-64 rounded-full bg-primary/5 blur-3xl" />
       <div className="pointer-events-none absolute -right-24 bottom-0 size-64 rounded-full bg-accent/10 blur-3xl" />
       <SectionHeading

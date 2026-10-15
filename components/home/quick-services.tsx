@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowRight, Building2, CalendarDays, GraduationCap, UserRound } from 'lucide-react'
 import { SectionHeading } from '@/components/shared/section-heading'
+import { cn } from '@/lib/utils'
 
 const services = [
   {
@@ -47,9 +48,19 @@ export function QuickServices() {
           <li key={service.title}>
             <Link
               href={service.href}
-              className="group flex h-full flex-col rounded-xl border bg-card p-6 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+              className={cn(
+                'group flex h-full flex-col rounded-2xl border p-6 transition-all hover:-translate-y-1 hover:shadow-lg',
+                service.title === 'Career Guidance' && 'border-[rgba(111,76,190,0.2)] bg-[rgba(242,237,255,0.72)] hover:border-[rgba(111,76,190,0.48)]',
+                service.title === 'Job Fairs' && 'border-[rgba(226,145,36,0.25)] bg-[rgba(255,244,224,0.78)] hover:border-[rgba(226,145,36,0.55)]',
+                !['Career Guidance', 'Job Fairs'].includes(service.title) && 'border-border bg-card',
+              )}
             >
-              <span className="flex size-12 items-center justify-center rounded-lg bg-secondary text-primary">
+              <span className={cn(
+                'flex size-12 items-center justify-center rounded-xl',
+                service.title === 'Career Guidance' && 'bg-[rgba(111,76,190,0.14)] text-[rgba(91,62,157,1)]',
+                service.title === 'Job Fairs' && 'bg-[rgba(226,145,36,0.16)] text-[rgba(171,99,13,1)]',
+                !['Career Guidance', 'Job Fairs'].includes(service.title) && 'bg-secondary text-primary',
+              )}>
                 <service.icon className="size-6" aria-hidden="true" />
               </span>
               <h3 className="mt-5 text-lg font-semibold text-foreground">{service.title}</h3>
