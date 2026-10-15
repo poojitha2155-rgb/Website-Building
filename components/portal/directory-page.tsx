@@ -18,23 +18,30 @@ const config = {
   courses: { eyebrow: 'Skills marketplace', title: 'Learn skills that open new doors', description: 'Build confidence with flexible courses from verified institutions and industry-led learning partners.', icon: GraduationCap, search: 'Search courses, skills or providers', cta: 'Find related jobs', href: '/jobs', stat: '1,800+ job-ready courses' },
 } as const
 
+const pageTheme = {
+  companies: { hero: 'bg-[linear-gradient(135deg,rgba(255,244,214,0.98),rgba(255,231,181,0.94)_48%,rgba(255,251,239,0.98))]', accent: 'text-[rgba(164,94,12,1)]', button: 'bg-[rgba(196,116,20,1)] hover:bg-[rgba(166,91,12,1)]' },
+  institutions: { hero: 'bg-[linear-gradient(135deg,rgba(239,235,255,0.98),rgba(218,208,250,0.94)_48%,rgba(250,248,255,0.98))]', accent: 'text-[rgba(91,62,157,1)]', button: 'bg-[rgba(91,62,157,1)] hover:bg-[rgba(70,43,128,1)]' },
+  courses: { hero: 'bg-[linear-gradient(135deg,rgba(225,237,255,0.98),rgba(193,218,255,0.94)_48%,rgba(246,250,255,0.98))]', accent: 'text-[rgba(20,80,170,1)]', button: 'bg-[rgba(20,80,170,1)] hover:bg-[rgba(15,61,132,1)]' },
+} as const
+
 export function DirectoryPage({ kind, items }: Props) {
   const [query, setQuery] = useState('')
   const page = config[kind]
+  const theme = pageTheme[kind]
   const Icon = page.icon
   const filtered = useMemo(() => items.filter((item) => Object.values(item).join(' ').toLowerCase().includes(query.toLowerCase())), [items, query])
 
   return <main>
-    <section className="border-b bg-primary text-primary-foreground">
+    <section className={cn('border-b text-foreground', theme.hero)}>
       <div className="mx-auto max-w-7xl px-4 py-14 lg:px-6 lg:py-20">
         <div className="max-w-3xl">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.2em] text-accent">{page.eyebrow}</p>
+          <p className={cn('mb-4 text-sm font-semibold uppercase tracking-[0.2em]', theme.accent)}>{page.eyebrow}</p>
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">{page.title}</h1>
-          <p className="mt-5 max-w-2xl text-lg leading-8 text-primary-foreground/75">{page.description}</p>
+          <p className="mt-5 max-w-2xl text-lg leading-8 text-foreground/70">{page.description}</p>
         </div>
         <div className="mt-10 flex max-w-3xl flex-col gap-3 sm:flex-row">
           <div className="relative flex-1"><Search className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-muted-foreground" aria-hidden="true" /><Input value={query} onChange={(e: ChangeEvent<HTMLInputElement>) => setQuery(e.target.value)} placeholder={page.search} className="h-14 border-0 bg-background pl-12 text-foreground" aria-label={page.search} /></div>
-          <Link href={page.href} className="inline-flex h-14 items-center justify-center gap-2 rounded-md bg-accent px-6 font-semibold text-accent-foreground hover:bg-accent/90">{page.cta}<ArrowRight className="size-4" aria-hidden="true" /></Link>
+          <Link href={page.href} className={cn('inline-flex h-14 items-center justify-center gap-2 rounded-md px-6 font-semibold text-white transition-colors', theme.button)}>{page.cta}<ArrowRight className="size-4" aria-hidden="true" /></Link>
         </div>
       </div>
     </section>
