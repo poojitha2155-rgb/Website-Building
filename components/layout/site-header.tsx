@@ -54,6 +54,11 @@ export function SiteHeader() {
     'Career Guidance': Compass,
     'Job Fairs': CalendarDays,
   }
+  const navHeaderColors = {
+    Companies: 'text-[rgba(111,76,190,1)] hover:bg-[rgba(234,229,255,0.8)] hover:text-[rgba(86,54,155,1)]',
+    Institutions: 'text-[rgba(20,80,170,1)] hover:bg-[rgba(225,232,255,0.85)] hover:text-[rgba(15,61,132,1)]',
+    Courses: 'text-[rgba(205,126,24,1)] hover:bg-[rgba(255,239,220,0.85)] hover:text-[rgba(162,91,12,1)]',
+  }
 
   return (
     <header className="sticky top-0 z-40 bg-transparent py-3 transition-all duration-300">
@@ -101,8 +106,11 @@ export function SiteHeader() {
                     aria-expanded={activeMenu === item.menuKey}
                     aria-controls={`${item.menuKey}-menu`}
                     className={cn(
-                      'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-[oklch(0.93_0.08_300)] hover:text-[oklch(0.35_0.13_300)]',
-                      isActive(item.href) || activeMenu === item.menuKey ? 'text-primary' : 'text-foreground/80',
+                      cn(
+                        'flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                        navHeaderColors[item.label as keyof typeof navHeaderColors] ?? 'text-foreground/80 hover:bg-[rgba(234,229,255,0.8)] hover:text-[rgba(86,54,155,1)]',
+                        isActive(item.href) || activeMenu === item.menuKey ? 'font-semibold' : '',
+                      ),
                     )}
                   >
                     {(() => {
