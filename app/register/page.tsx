@@ -5,7 +5,7 @@ import { RegisterForm } from '@/components/auth/register-form'
 
 export const metadata: Metadata = {
   title: 'Register',
-  description: 'Create a free Future Akshita Company account as a job seeker or employer.',
+  description: 'Create a free Akshitha Edutech Company account as a job seeker or employer.',
 }
 
 type SearchParams = Promise<{ role?: string }>
@@ -17,7 +17,7 @@ export default async function RegisterPage({ searchParams }: { searchParams: Sea
   return (
     <AuthCard
       title="Create your free account"
-      description="Join lakhs of job seekers and employers on Future Akshita."
+      description="Join lakhs of job seekers and employers on Akshitha Edutech."
       footer={
         <>
           {'Already registered? '}

@@ -7,7 +7,7 @@ import { TopEmployers } from '@/components/home/top-employers'
 
 export const metadata: Metadata = {
   title: 'For Employers',
-  description: 'Post jobs for free, search verified candidates and run hiring drives with Future Akshita Company.',
+  description: 'Post jobs for free, search verified candidates and run hiring drives with Akshitha Edutech Company.',
 }
 
 const benefits = [

@@ -109,7 +109,7 @@ export const employerHiringModes = ['Full-time', 'Part-time', 'Internship', 'Con
 
 export const dashboardVersion = 'Workspace proposal v1';
 
-export const completionMessage = 'All main Future Akshitha portal sections are available as editable frontend routes.';
+export const completionMessage = 'All main Akshitha Edutech portal sections are available as editable frontend routes.';
 
 export const sampleUser = { name: 'Aarav Mehta', role: 'Product design learner', location: 'Bengaluru, India' };
 
@@ -119,7 +119,7 @@ export const sampleInstitution = { name: 'Akshitha Institute of Technology', rol
 
 export const sampleProvider = { name: 'SkillForge Learning', role: 'Training provider', location: 'Global / Online' };
 
-export const sampleAdmin = { name: 'Platform operations', role: 'Administrator', location: 'Future Akshitha' };
+export const sampleAdmin = { name: 'Platform operations', role: 'Administrator', location: 'Akshitha Edutech' };
 
 export const ctaRoutes = { opportunities: '/jobs', learning: '/courses', partner: '/contact', account: '/dashboard' };
 
@@ -209,7 +209,7 @@ export const dataMode = 'demo';
 
 export const visibilityLabels = ['Public', 'Partner-only', 'Private'];
 
-export const dashboardFooter = 'Future Akshitha Company · Connected careers and learning';
+export const dashboardFooter = 'Akshitha Edutech Company · Connected careers and learning';
 
 export const portalNavItems = ['Jobs', 'Internships', 'Companies', 'Institutions', 'Courses'];
 
@@ -239,7 +239,7 @@ export const routeMap = { jobs: '/jobs', internships: '/internships', companies:
 
 export const dashboardMap = { learner: '/dashboard', employer: '/dashboard/employer', institution: '/dashboard/institution', provider: '/dashboard/provider', admin: '/admin' } as const;
 
-export const productName = 'Future Akshitha Company';
+export const productName = 'Akshitha Edutech Company';
 
 export const productPromise = 'Make every next step clearer, more connected and more achievable.';
 

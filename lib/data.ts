@@ -1,5 +1,5 @@
 /*
-  Sample content for the Future Akshita Company website.
+  Sample content for the Akshitha Edutech Company website.
   Replace these arrays with API calls when you connect a backend.
 */
 
@@ -331,7 +331,7 @@ export const jobFairs = [
     title: 'National Virtual Freshers Fair',
     date: '2026-11-15',
     city: 'Online',
-    venue: 'Future Akshita Virtual Hall',
+    venue: 'Akshitha Edutech Virtual Hall',
     employers: 120,
     vacancies: 6000,
     mode: 'Virtual',
@@ -446,7 +446,7 @@ export const institutions = [
   { name: 'Sanjeevani College of Health Sciences', type: 'College', location: 'Hyderabad, Telangana', programs: 26, focus: 'Nursing, allied health and clinical practice', badge: 'Verified' },
   { name: 'Global Skills Academy', type: 'Training Partner', location: 'Online · India', programs: 64, focus: 'Job-ready technology and professional skills', badge: 'International' },
   { name: 'Kalam School of Design', type: 'Institute', location: 'New Delhi, India', programs: 12, focus: 'Design, media and creative technology', badge: 'Verified' },
-  { name: 'Future Akshita Open Learning', type: 'Learning Network', location: 'Online · Worldwide', programs: 80, focus: 'Flexible learning for every career stage', badge: 'International' },
+  { name: 'Akshitha Edutech Open Learning', type: 'Learning Network', location: 'Online · Worldwide', programs: 80, focus: 'Flexible learning for every career stage', badge: 'International' },
 ] as const
 
 export const courses = [
@@ -454,7 +454,7 @@ export const courses = [
   { title: 'Data Analytics with Python', provider: 'Global Skills Academy', category: 'Technology', level: 'Beginner', duration: '10 weeks', learners: '8,900+', format: 'Online', accent: 'violet' },
   { title: 'Healthcare Operations & Patient Care', provider: 'Sanjeevani College', category: 'Healthcare', level: 'Professional', duration: '12 weeks', learners: '5,200+', format: 'Hybrid', accent: 'emerald' },
   { title: 'Leadership for Emerging Managers', provider: 'National School of Business', category: 'Business', level: 'Intermediate', duration: '8 weeks', learners: '4,700+', format: 'Online', accent: 'amber' },
-  { title: 'English for Global Careers', provider: 'Future Akshita Open Learning', category: 'Communication', level: 'All levels', duration: '6 weeks', learners: '15,800+', format: 'Online', accent: 'rose' },
+  { title: 'English for Global Careers', provider: 'Akshitha Edutech Open Learning', category: 'Communication', level: 'All levels', duration: '6 weeks', learners: '15,800+', format: 'Online', accent: 'rose' },
   { title: 'Sustainable Manufacturing Foundations', provider: 'Veerabhadra Academy', category: 'Manufacturing', level: 'Professional', duration: '14 weeks', learners: '2,100+', format: 'Hybrid', accent: 'teal' },
 ] as const
 

@@ -5,7 +5,7 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
-  Future Akshita Company — design tokens
+  Akshitha Edutech — design tokens
   Edit the values in :root to re-theme the entire site.
   primary  = deep teal (brand)
   accent   = marigold (highlights / calls to action)
@@ -46,27 +46,27 @@
 
 :root {
   color-scheme: light;
-  --background: oklch(0.99 0.003 180);
-  --foreground: oklch(0.22 0.03 220);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.03 220);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.03 220);
-  --primary: oklch(0.45 0.09 195);
-  --primary-foreground: oklch(0.99 0 0);
-  --secondary: oklch(0.96 0.015 190);
-  --secondary-foreground: oklch(0.3 0.06 200);
-  --muted: oklch(0.965 0.006 200);
-  --muted-foreground: oklch(0.48 0.025 220);
-  --accent: oklch(0.8 0.15 75);
-  --accent-foreground: oklch(0.25 0.05 60);
+  --background: rgba(248, 251, 255, 1);
+  --foreground: rgba(24, 39, 70, 1);
+  --card: rgba(255, 255, 255, 0.82);
+  --card-foreground: rgba(24, 39, 70, 1);
+  --popover: rgba(255, 255, 255, 0.96);
+  --popover-foreground: rgba(24, 39, 70, 1);
+  --primary: rgba(20, 80, 170, 1);
+  --primary-foreground: rgba(255, 255, 255, 1);
+  --secondary: rgba(238, 233, 255, 1);
+  --secondary-foreground: rgba(48, 39, 105, 1);
+  --muted: rgba(244, 246, 252, 1);
+  --muted-foreground: rgba(82, 88, 112, 1);
+  --accent: rgba(238, 153, 48, 1);
+  --accent-foreground: rgba(46, 31, 76, 1);
   --destructive: oklch(0.577 0.245 27.325);
   --success: oklch(0.6 0.14 155);
-  --border: oklch(0.91 0.012 200);
-  --input: oklch(0.89 0.012 200);
-  --ring: oklch(0.55 0.09 195);
-  --brand-dark: oklch(0.26 0.05 210);
-  --radius: 0.625rem;
+  --border: rgba(190, 210, 235, 0.65);
+  --input: rgba(190, 210, 235, 0.8);
+  --ring: rgba(0, 180, 180, 0.55);
+  --brand-dark: rgba(20, 35, 75, 1);
+  --radius: 0.875rem;
 }
 
 @layer base {
@@ -78,11 +78,58 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
+    background-image: radial-gradient(circle at 8% 12%, rgba(111, 76, 190, 0.13), transparent 28rem), radial-gradient(circle at 92% 38%, rgba(239, 154, 49, 0.1), transparent 30rem), linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(246, 244, 252, 0.9));
+    background-attachment: fixed;
+  }
+  ::selection {
+    background: rgba(246, 190, 58, 0.35);
+    color: rgba(19, 33, 68, 1);
   }
   h1,
   h2,
   h3,
   h4 {
     @apply font-heading text-balance;
+  }
+}
+
+@keyframes employer-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.employer-marquee {
+  animation: employer-marquee 32s linear infinite;
+}
+
+main > section:not(:first-child) {
+  position: relative;
+}
+
+main > section:nth-child(2n) {
+  background: linear-gradient(135deg, rgba(234, 229, 255, 0.5), rgba(255, 255, 255, 0.2));
+}
+
+main > section:nth-child(3n) {
+  background: linear-gradient(135deg, rgba(255, 239, 220, 0.48), rgba(255, 255, 255, 0.18));
+}
+
+main > section:nth-child(4n) {
+  background: linear-gradient(135deg, rgba(225, 232, 255, 0.52), rgba(255, 255, 255, 0.16));
+}
+
+main > section > div,
+main > section > ul {
+  position: relative;
+  z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .employer-marquee {
+    animation-play-state: paused;
   }
 }

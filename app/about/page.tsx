@@ -29,7 +29,7 @@ const pillars = [
 ]
 
 const milestones = [
-  { year: '2019', text: 'Future Akshita Company founded in Hyderabad with a team of five.' },
+  { year: '2019', text: 'Akshitha Edutech Company founded in Hyderabad with a team of five.' },
   { year: '2021', text: 'Launched free career counselling with 100 certified counsellors.' },
   { year: '2023', text: 'Crossed 10 lakh registered job seekers and 20,000 employers.' },
   { year: '2025', text: 'Expanded to virtual job fairs reaching candidates in all 28 states.' },
