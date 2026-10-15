@@ -82,7 +82,7 @@ export function SiteHeader() {
           </div>
         </div>
 
-        <div className={cn('mt-2 flex items-center justify-between gap-4 rounded-[2rem] border border-primary/35 bg-background/75 px-4 shadow-sm backdrop-blur-xl transition-all lg:px-6', scrollingDown ? 'h-[4.75rem]' : 'h-14 rounded-2xl')}>
+        <div className={cn('mt-2 flex items-center justify-between gap-4 rounded-[2rem] border border-white/75 bg-white/[0.78] px-4 shadow-[0_10px_30px_rgba(20,35,75,0.1)] backdrop-blur-xl transition-all lg:px-6', scrollingDown ? 'h-[4.75rem]' : 'h-14 rounded-2xl')}>
         <Logo />
 
         <nav aria-label="Main" className="hidden lg:block">

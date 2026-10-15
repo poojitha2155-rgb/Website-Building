@@ -3,7 +3,7 @@ import { CareerCarousel } from '@/components/home/career-carousel'
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[oklch(0.88_0.09_295)] via-[oklch(0.94_0.05_285)] to-[oklch(0.9_0.12_88)] pb-14 pt-10 text-foreground md:pb-20 md:pt-14">
+    <section className="relative overflow-hidden bg-[linear-gradient(135deg,rgba(215,250,242,1)_0%,rgba(235,245,255,1)_50%,rgba(220,235,255,1)_100%)] pb-14 pt-10 text-foreground md:pb-20 md:pt-14">
       <div className="mx-auto max-w-7xl px-4 text-center lg:px-6">
         <p className="mx-auto max-w-3xl text-lg font-medium leading-relaxed text-foreground/80 md:text-xl">
           Your next career move starts here. Search jobs from verified employers, get free career counselling, and join job fairs across India — all in one place.
