@@ -46,12 +46,12 @@
 
 :root {
   color-scheme: light;
-  --background: oklch(0.99 0.003 180);
-  --foreground: oklch(0.22 0.03 220);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.22 0.03 220);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.22 0.03 220);
+  --background: rgba(248, 251, 255, 1);
+  --foreground: rgba(24, 39, 70, 1);
+  --card: rgba(255, 255, 255, 0.82);
+  --card-foreground: rgba(24, 39, 70, 1);
+  --popover: rgba(255, 255, 255, 0.96);
+  --popover-foreground: rgba(24, 39, 70, 1);
   --primary: oklch(0.29 0.11 250);
   --primary-foreground: oklch(0.99 0 0);
   --secondary: oklch(0.95 0.035 185);
@@ -62,11 +62,11 @@
   --accent-foreground: oklch(0.99 0 0);
   --destructive: oklch(0.577 0.245 27.325);
   --success: oklch(0.6 0.14 155);
-  --border: oklch(0.91 0.012 200);
-  --input: oklch(0.89 0.012 200);
-  --ring: oklch(0.55 0.09 195);
-  --brand-dark: oklch(0.26 0.05 210);
-  --radius: 0.625rem;
+  --border: rgba(43, 87, 150, 0.14);
+  --input: rgba(43, 87, 150, 0.18);
+  --ring: rgba(18, 124, 132, 0.55);
+  --brand-dark: rgba(19, 33, 68, 0.98);
+  --radius: 0.875rem;
 }
 
 @layer base {
@@ -78,6 +78,12 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
+    background-image: radial-gradient(circle at 8% 12%, rgba(129, 103, 218, 0.09), transparent 28rem), radial-gradient(circle at 92% 38%, rgba(20, 160, 150, 0.08), transparent 30rem), linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(241, 247, 255, 0.82));
+    background-attachment: fixed;
+  }
+  ::selection {
+    background: rgba(246, 190, 58, 0.35);
+    color: rgba(19, 33, 68, 1);
   }
   h1,
   h2,
@@ -98,6 +104,28 @@
 
 .employer-marquee {
   animation: employer-marquee 32s linear infinite;
+}
+
+main > section:not(:first-child) {
+  position: relative;
+}
+
+main > section:nth-child(2n) {
+  background: linear-gradient(135deg, rgba(232, 239, 255, 0.42), rgba(255, 255, 255, 0.2));
+}
+
+main > section:nth-child(3n) {
+  background: linear-gradient(135deg, rgba(224, 249, 244, 0.34), rgba(255, 255, 255, 0.18));
+}
+
+main > section:nth-child(4n) {
+  background: linear-gradient(135deg, rgba(255, 244, 213, 0.36), rgba(255, 255, 255, 0.16));
+}
+
+main > section > div,
+main > section > ul {
+  position: relative;
+  z-index: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
