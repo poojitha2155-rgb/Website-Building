@@ -5,8 +5,10 @@ import { footerNav, siteConfig } from '@/lib/site'
 
 export function SiteFooter() {
   return (
-    <footer className="bg-brand-dark text-white/80">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-14 md:grid-cols-2 lg:grid-cols-5 lg:px-6">
+    <footer className="relative overflow-hidden bg-[linear-gradient(135deg,rgba(28,31,76,1),rgba(55,39,112,0.98)_52%,rgba(24,92,110,0.98))] text-white/80">
+      <div className="pointer-events-none absolute -right-24 -top-24 size-72 rounded-full bg-[rgba(244,181,72,0.16)] blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-32 left-1/3 size-80 rounded-full bg-[rgba(148,116,225,0.16)] blur-3xl" />
+      <div className="relative z-10 mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-2 lg:grid-cols-5 lg:px-6">
         <div className="lg:col-span-2">
           <Logo inverted />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">{siteConfig.description}</p>

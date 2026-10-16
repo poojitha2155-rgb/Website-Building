@@ -6,11 +6,19 @@ type PageHeaderProps = {
   description?: string
   breadcrumb?: string
   children?: React.ReactNode
+  tone?: 'default' | 'about' | 'contact' | 'guidance' | 'fairs'
 }
 
-export function PageHeader({ title, description, breadcrumb, children }: PageHeaderProps) {
+export function PageHeader({ title, description, breadcrumb, children, tone = 'default' }: PageHeaderProps) {
+  const tones = {
+    default: 'border-b bg-secondary',
+    about: 'border-b border-[rgba(111,76,190,0.16)] bg-[linear-gradient(135deg,rgba(242,237,255,0.96),rgba(255,255,255,0.96))]',
+    contact: 'border-b border-[rgba(224,119,119,0.16)] bg-[linear-gradient(135deg,rgba(255,235,235,0.96),rgba(255,247,237,0.96))]',
+    guidance: 'border-b border-[rgba(71,139,158,0.18)] bg-[linear-gradient(135deg,rgba(222,246,246,0.96),rgba(235,242,255,0.96))]',
+    fairs: 'border-b border-[rgba(216,151,48,0.2)] bg-[linear-gradient(135deg,rgba(255,242,211,0.98),rgba(255,229,194,0.94))]',
+  }
   return (
-    <section className="border-b bg-secondary">
+    <section className={tones[tone]}>
       <div className="mx-auto max-w-7xl px-4 py-10 lg:px-6 lg:py-14">
         <nav aria-label="Breadcrumb">
           <ol className="flex items-center gap-1.5 text-sm text-muted-foreground">

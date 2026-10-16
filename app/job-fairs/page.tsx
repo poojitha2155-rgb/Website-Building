@@ -16,6 +16,7 @@ export default function JobFairsPage() {
   return (
     <>
       <PageHeader
+        tone="fairs"
         title="Job Fairs & Hiring Drives"
         description={`${jobFairs.length} upcoming events with ${totalVacancies.toLocaleString('en-IN')}+ vacancies. Register once and attend any event.`}
       />

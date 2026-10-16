@@ -22,7 +22,7 @@ export default function ContactPage() {
 
   return (
     <>
-      <PageHeader title="Contact Us" description="Questions about jobs, hiring or your account? Our helpdesk is here to help." />
+      <PageHeader tone="contact" title="Contact Us" description="Questions about jobs, hiring or your account? Our helpdesk is here to help." />
 
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 lg:grid-cols-[1fr_1.4fr] lg:px-6">
         <div>

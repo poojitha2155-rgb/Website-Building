@@ -15,6 +15,7 @@ export default function CareerGuidancePage() {
   return (
     <>
       <PageHeader
+        tone="guidance"
         title="Career Guidance"
         description="Expert counselling, practical guides and learning resources to help you make confident career decisions."
       />

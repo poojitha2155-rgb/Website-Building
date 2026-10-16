@@ -38,7 +38,7 @@ const milestones = [
 export default function AboutPage() {
   return (
     <>
-      <PageHeader title={`About ${siteConfig.name}`} description={siteConfig.description} />
+      <PageHeader tone="about" title={`About ${siteConfig.name}`} description={siteConfig.description} />
 
       <section className="mx-auto max-w-7xl px-4 py-16 lg:px-6">
         <ul className="grid gap-5 md:grid-cols-3">
