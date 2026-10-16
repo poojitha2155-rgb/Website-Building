@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import { BriefcaseBusiness, Building2, CalendarDays, Compass, GraduationCap, Landmark, Mail, Menu, Phone, Search, UsersRound, X } from 'lucide-react'
+import { BriefcaseBusiness, Building2, CalendarDays, Camera, Compass, GraduationCap, Landmark, Mail, Menu, Phone, PlaySquare, Search, UsersRound, X } from 'lucide-react'
 import { Logo } from '@/components/layout/logo'
 import { buttonVariants } from '@/components/ui/button'
 import { mainNav, megaMenus, siteConfig } from '@/lib/site'
@@ -41,11 +41,11 @@ export function SiteHeader() {
   }
 
   const socialLinks = [
-    { label: 'Facebook', short: 'f', href: 'https://www.facebook.com/' },
-    { label: 'Instagram', short: 'ig', href: 'https://www.instagram.com/' },
-    { label: 'Twitter', short: '𝕏', href: 'https://twitter.com/' },
-    { label: 'LinkedIn', short: 'in', href: 'https://www.linkedin.com/' },
-    { label: 'YouTube', short: '▶', href: 'https://www.youtube.com/' },
+    { label: 'Facebook', icon: null, href: 'https://www.facebook.com/', symbol: 'f' },
+    { label: 'Instagram', icon: Camera, href: 'https://www.instagram.com/' },
+    { label: 'Twitter', icon: null, href: 'https://twitter.com/', symbol: '𝕏' },
+    { label: 'LinkedIn', icon: null, href: 'https://www.linkedin.com/', symbol: 'in' },
+    { label: 'YouTube', icon: PlaySquare, href: 'https://www.youtube.com/' },
   ]
   const navIcons = {
     'Find Jobs': BriefcaseBusiness,
@@ -69,7 +69,7 @@ export function SiteHeader() {
             <div className="flex items-center gap-2" aria-label="Social media links">
               {socialLinks.map((social) => (
                 <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={`Akshitha Edutech on ${social.label}`} className="flex size-7 items-center justify-center rounded-full border border-white/60 font-semibold transition-colors hover:bg-white hover:text-brand-dark">
-                  {social.short}
+                  {social.icon ? <social.icon className="size-3.5" strokeWidth={2.2} aria-hidden="true" /> : <span className="text-xs" aria-hidden="true">{social.symbol}</span>}
                 </a>
               ))}
             </div>
