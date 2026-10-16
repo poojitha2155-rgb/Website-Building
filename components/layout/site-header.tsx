@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import { BriefcaseBusiness, Building2, CalendarDays, Camera, Compass, GraduationCap, Landmark, Mail, Menu, Phone, PlaySquare, Search, UsersRound, X } from 'lucide-react'
+import { BriefcaseBusiness, Building2, CalendarDays, Compass, GraduationCap, Landmark, Mail, Menu, Phone, PlaySquare, Search, UsersRound, X } from 'lucide-react'
 import { Logo } from '@/components/layout/logo'
 import { buttonVariants } from '@/components/ui/button'
 import { mainNav, megaMenus, siteConfig } from '@/lib/site'
@@ -42,7 +42,7 @@ export function SiteHeader() {
 
   const socialLinks = [
     { label: 'Facebook', icon: null, href: 'https://www.facebook.com/', symbol: 'f' },
-    { label: 'Instagram', icon: Camera, href: 'https://www.instagram.com/' },
+    { label: 'Instagram', icon: null, href: 'https://www.instagram.com/' },
     { label: 'Twitter', icon: null, href: 'https://twitter.com/', symbol: '𝕏' },
     { label: 'LinkedIn', icon: null, href: 'https://www.linkedin.com/', symbol: 'in' },
     { label: 'YouTube', icon: PlaySquare, href: 'https://www.youtube.com/' },
@@ -69,7 +69,13 @@ export function SiteHeader() {
             <div className="flex items-center gap-2" aria-label="Social media links">
               {socialLinks.map((social) => (
                 <a key={social.label} href={social.href} target="_blank" rel="noreferrer" aria-label={`Akshitha Edutech on ${social.label}`} className="flex size-7 items-center justify-center rounded-full border border-white/60 font-semibold transition-colors hover:bg-white hover:text-brand-dark">
-                  {social.icon ? <social.icon className="size-3.5" strokeWidth={2.2} aria-hidden="true" /> : <span className="text-xs" aria-hidden="true">{social.symbol}</span>}
+                  {social.label === 'Instagram' ? (
+                    <span className="relative flex size-4 items-center justify-center rounded-[5px] bg-[linear-gradient(135deg,#7c3aed,#ec4899_48%,#f59e0b)]" aria-hidden="true">
+                      <span className="absolute inset-[3px] rounded-[4px] border-[1.5px] border-white" />
+                      <span className="absolute size-1.5 rounded-full border border-white" />
+                      <span className="absolute right-[3px] top-[3px] size-1 rounded-full bg-white" />
+                    </span>
+                  ) : social.icon ? <social.icon className="size-3.5" strokeWidth={2.2} aria-hidden="true" /> : <span className="text-xs" aria-hidden="true">{social.symbol}</span>}
                 </a>
               ))}
             </div>
