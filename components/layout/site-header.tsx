@@ -42,6 +42,8 @@ export function SiteHeader() {
 
   const socialLinks = [
     { label: 'Facebook', short: 'f', href: 'https://www.facebook.com/' },
+    { label: 'Instagram', short: 'ig', href: 'https://www.instagram.com/' },
+    { label: 'Twitter', short: '𝕏', href: 'https://twitter.com/' },
     { label: 'LinkedIn', short: 'in', href: 'https://www.linkedin.com/' },
     { label: 'YouTube', short: '▶', href: 'https://www.youtube.com/' },
   ]
